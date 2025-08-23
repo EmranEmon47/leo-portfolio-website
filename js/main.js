@@ -3,15 +3,15 @@
 	'use strict';
 
 
-	// for pdf download
-	document.getElementById("downloadBtn").addEventListener("click", function () {
-		const link = document.createElement("a");
-		link.href = "/assets/MohonRaihan-CV.docx";
-		link.download = "Mohon-Raihan-CV.docx";
-		document.body.appendChild(link);
-		link.click();
-		document.body.removeChild(link);
-	});
+	// // for pdf download
+	// document.getElementById("downloadBtn").addEventListener("click", function () {
+	// 	const link = document.createElement("a");
+	// 	link.href = "/assets/MohonRaihan-CV.docx";
+	// 	link.download = "Mohon-Raihan-CV.docx";
+	// 	document.body.appendChild(link);
+	// 	link.click();
+	// 	document.body.removeChild(link);
+	// });
 	// iPad and iPod detection	
 	var isiPad = function () {
 		return (navigator.platform.indexOf("iPad") != -1);
@@ -173,6 +173,18 @@
 
 	// Document on load.
 	$(function () {
+		// PDF download
+		const downloadBtn = document.getElementById("downloadBtn");
+		if (downloadBtn) {
+			downloadBtn.addEventListener("click", function () {
+				const link = document.createElement("a");
+				link.href = "/assets/MohonRaihan-CV.docx";
+				link.download = "Mohon-Raihan-CV.docx";
+				document.body.appendChild(link);
+				link.click();
+				document.body.removeChild(link);
+			});
+		}
 		fullHeight();
 		burgerMenu();
 		counterWayPoint();
